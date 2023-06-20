@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>form validation</title>
     <style>
-        body{
-            background-color: #3498db;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-image: url("https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171__480.jpg");
-        }
+      body {
+        background-color: #3498db;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: blueviolet;
+      }
 
-        #form-container{
-            background-color: aliceblue;
-            padding: 50px;
-            /* display: flex;
+      #form-container {
+        background-color: aliceblue;
+        padding: 50px;
+        /* display: flex;
             justify-content: center;
             align-items: center; */
-            text-align: center;
-            border-radius: 10px;        
-        }
-        
-        h2{
-            margin: 0px 0px 10px 0px;
-        }
+        text-align: center;
+        border-radius: 10px;
+      }
 
-        input{
-            width: 200px;
-            margin: 10px 0px;
-            padding: 10px;
-            border-radius: 20px;
-        }
+      h2 {
+        margin: 0px 0px 10px 0px;
+      }
 
-/* input[type="submit"]{
+      input {
+        width: 200px;
+        margin: 10px 0px;
+        padding: 10px;
+        border-radius: 20px;
+      }
+
+      /* input[type="submit"]{
     width: 222px;
     background-color: #3498db;
     border:0px;
@@ -45,81 +45,71 @@
 
 } */
 
-.submit{
-    width: 222px;
-    background-color: #3498db;
-    border:0px;
-    color:white; 
-}
+      .submit {
+        width: 222px;
+        background-color: #3498db;
+        border: 0px;
+        color: white;
+      }
 
-.error{
-    color: red;
-    margin: 0px;
-    text-align: left;
-}
-
+      .error {
+        color: red;
+        margin: 0px;
+        text-align: left;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="form-container">
-    <img 
-    src="https://thumbs.dreamstime.com/b/twitter-logo-bird-isolated-over-white-background-social-media-networking-communications-symbol-breaking-news-130861855.jpg" 
-    alt="twitter logo"
-    height="50px"
-    width="50px"
-    >
+      <img
+        src="https://thumbs.dreamstime.com/b/twitter-logo-bird-isolated-over-white-background-social-media-networking-communications-symbol-breaking-news-130861855.jpg"
+        alt="twitter logo"
+        height="50px"
+        width="50px"
+      />
 
-    <h2>login</h2>
-    <form action="" onsubmit="return validate()">
-    <input type="text" placeholder="username" id="username"><br>
-    <p id="uError" class="error"> </p>
-    <input type="password" placeholder="password" id="password" ><br>
-    <p id="pError" class="error"> </p>
-    <input type="submit" class="submit">
-
-
-    </form>
+      <h2>login</h2>
+      <form action="" onsubmit="return validate()">
+        <input type="text" placeholder="username" id="username" /><br />
+        <p id="uError" class="error"></p>
+        <input type="password" placeholder="password" id="password" /><br />
+        <p id="pError" class="error"></p>
+        <input type="submit" class="submit" />
+      </form>
     </div>
 
     <script>
-let un = document.getElementById("username");
-let pw = document.getElementById("password");
-let flag = 1;
+      let un = document.getElementById("username");
+      let pw = document.getElementById("password");
+      let flag = 1;
 
-  function validate(){
-    
-    if(username.value==""){
-       document.getElementById("uError").innerHTML= "username required";
-       flag = 0;
-    }else if(username.value.length < 4){
-        document.getElementById("uError").innerHTML= "username must contain 8 letters";
-        flag = 0;
-    }else{
-        document.getElementById("uError").innerHTML= "";
-        flag = 1;
-    }
+      function validate() {
+        if (username.value == "") {
+          document.getElementById("uError").innerHTML = "username required";
+          flag = 0;
+        } else if (username.value.length < 4) {
+          document.getElementById("uError").innerHTML =
+            "username must contain 8 letters";
+          flag = 0;
+        } else {
+          document.getElementById("uError").innerHTML = "";
+          flag = 1;
+        }
 
-
-
-    if(password.value==""){
-        document.getElementById("pError").innerHTML= "you must set password";
-        flag = 0;  
-    }else{
-        document.getElementById("pError").innerHTML= "";
-        flag = 1;
-    }
-    // yha jo value return hogi vahi onsubmit ko milegi
-    if(flag){
-    return true;
-    }else{
-    return false;
-    }
-}
-
-
+        if (password.value == "") {
+          document.getElementById("pError").innerHTML = "you must set password";
+          flag = 0;
+        } else {
+          document.getElementById("pError").innerHTML = "";
+          flag = 1;
+        }
+        // yha jo value return hogi vahi onsubmit ko milegi
+        if (flag) {
+          return true;
+        } else {
+          return false;
+        }
+      }
     </script>
-
-    
-</body>
+  </body>
 </html>
